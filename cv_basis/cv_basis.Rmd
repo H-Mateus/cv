@@ -122,17 +122,6 @@ df %>%
   )
 ```
 
-# Skills
-
-```{r skills}
-df %>% 
-  dplyr::filter(type == "skill") %>%
-  detailed_entries(
-    what = what,
-    with = with
-  )
-```
-
 # Talks
 
 ```{r}
@@ -143,6 +132,17 @@ df %>%
     when = start_year,
     with = with,
     where = city
+  )
+```
+
+# Skills
+
+```{r skills}
+df %>% 
+  dplyr::filter(type == "skill") %>%
+  detailed_entries(
+    what = what,
+    with = with
   )
 ```
 

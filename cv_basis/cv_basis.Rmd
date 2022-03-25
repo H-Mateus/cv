@@ -7,9 +7,9 @@ address: "School of Medicine, Dementia Research Institue"
 profilepic: avatar.png
 www: gmbernardoharrington.netlify.app
 email: "Bernardo-HarringtonG@cardiff.ac.uk"
-twitter: Hmateus4
+#twitter: Hmateus4
 github: H-Mateus
-linkedin: mateus-harrington-33657b68
+linkedin: gmb-harrington
 orcid: 0000-0001-6075-3619
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "Currently a Research Associate as a bioinformatician at the Dementia Research Institute, Cardiff University, working on Alzheimer's disease with a focus towards genomics."
@@ -29,7 +29,8 @@ packages <- c("vitae",
               "dplyr",
               "lubridate",
               "glue",
-              "here")
+              "here"
+)
 
 xfun::pkg_attach2(packages, message = FALSE)
 

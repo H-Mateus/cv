@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.3.21)  25 MAR 2022 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.3.21)  25 MAR 2022 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -724,11 +724,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--103
 [][]$\T1/DejaVuSansMono-TLF/m/n/10 Bernardo-[]HarringtonG @
  []
 
-LaTeX Font Info:    Trying to load font information for U+fontawesomethree on i
-nput line 103.
-(/usr/share/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
-File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
-)
+
 Underfull \hbox (badness 1895) in paragraph at lines 116--126
 \T1/ClearSans-TLF/regular/n/10 change to neu-ro-log-i-cal func-tion, re-cov-ery
  from which is highly vari-able,
@@ -830,26 +826,25 @@ Package rerunfilecheck Info: File `cv_basis.out' has not changed.
  )
 (\end occurred when \ifnum on line 31 was incomplete) 
 Here is how much of TeX's memory you used:
- 23454 strings out of 478276
- 429319 string characters out of 5853013
- 723368 words of memory out of 5000000
- 41236 multiletter control sequences out of 15000+600000
- 500386 words of font info for 44 fonts, out of 8000000 for 9000
+ 23443 strings out of 478276
+ 428970 string characters out of 5853013
+ 722303 words of memory out of 5000000
+ 41229 multiletter control sequences out of 15000+600000
+ 500208 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  115i,11n,118p,586b,780s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fon
-ts/enc/dvips/clearsans/clr_zxbkm4.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fo
-ntawesome/fontawesomethree.enc}{/usr/share/texmf-dist/fonts/enc/dvips/dejavu/de
-javumono_t1-type1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontaw
-esometwo.enc}{/usr/share/texmf-dist/fonts/enc/dvips/clearsans/clr_nrghxx.enc}</
-usr/share/texmf-dist/fonts/type1/intel/clearsans/ClearSans-Italic.pfb></usr/sha
-re/texmf-dist/fonts/type1/intel/clearsans/ClearSans-Regular.pfb></usr/share/tex
-mf-dist/fonts/type1/public/dejavu/DejaVuSansMono.pfb></usr/share/texmf-dist/fon
-ts/type1/public/fontawesome/FontAwesome.pfb>
-Output written on cv_basis.pdf (2 pages, 297840 bytes).
+ts/enc/dvips/clearsans/clr_zxbkm4.enc}{/usr/share/texmf-dist/fonts/enc/dvips/de
+javu/dejavumono_t1-type1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome
+/fontawesometwo.enc}{/usr/share/texmf-dist/fonts/enc/dvips/clearsans/clr_nrghxx
+.enc}</usr/share/texmf-dist/fonts/type1/intel/clearsans/ClearSans-Italic.pfb></
+usr/share/texmf-dist/fonts/type1/intel/clearsans/ClearSans-Regular.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/dejavu/DejaVuSansMono.pfb></usr/share/texmf-d
+ist/fonts/type1/public/fontawesome/FontAwesome.pfb>
+Output written on cv_basis.pdf (2 pages, 296738 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 79 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  14 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

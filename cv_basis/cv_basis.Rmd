@@ -1,0 +1,157 @@
+---
+name: Gabriel-Mateus
+surname: Bernardo Harrington
+position: "Research Associate"
+address: "School of Medicine, Dementia Research Institue"
+#phone: +44 077 390 47519
+profilepic: avatar.png
+www: gmbernardoharrington.netlify.app
+email: "Bernardo-HarringtonG@cardiff.ac.uk"
+twitter: Hmateus4
+github: H-Mateus
+linkedin: mateus-harrington-33657b68
+orcid: 0000-0001-6075-3619
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Currently a Research Associate as a bioinformatician at the Dementia Research Institute, Cardiff University, working on Alzheimer's disease with a focus towards genomics."
+output: vitae::twentyseconds
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+## load packages, xfun will install packages if they aren't installed already
+require(xfun)
+
+packages <- c("vitae",
+              "tibble",
+              "rorcid",
+              "readr",
+              "dplyr",
+              "lubridate",
+              "glue",
+              "here")
+
+xfun::pkg_attach2(packages, message = FALSE)
+
+## read in data
+df <- read_csv("awarded_funding.csv") %>%
+  dplyr::mutate(start_year = lubridate::year(start), 
+                end_year = lubridate::year(end))
+```
+
+```{r load-orcid-data}
+## education data
+orcid_education_data <- do.call("rbind",
+  rorcid::orcid_educations("0000-0001-6075-3619")$`0000-0001-6075-3619`$`affiliation-group`$summaries
+)
+## awards data
+orcid_distinctions_data <- do.call("rbind",
+  rorcid::orcid_distinctions("0000-0001-6075-3619")$`0000-0001-6075-3619`$`affiliation-group`$summaries
+)
+## funding data
+orcid_funding_data <- do.call("rbind",
+  rorcid::orcid_fundings("0000-0001-6075-3619")$`0000-0001-6075-3619`$group$`funding-summary`
+)
+```
+
+# Research profile
+
+Currently a Research Associate Alzheimer's Disease group within the [Dementia Research Institute](https://ukdri.ac.uk/) at [Cardiff University](https://www.cardiff.ac.uk/) as a bioinformatician.
+
+My PhD at Keele University based in the [OsKOR](https://oskor.netlify.app/) group at The [RJAH Orthopaedic Hospital](https://www.rjah.nhs.uk/) focused on spinal cord injury (SCI).
+SCI is damage to the spinal cord due to trauma, degeneration or disease that results in a temporary/permanent change to neurological function, recovery from which is highly variable, stymieing development of novel therapies as powering clinical trials is extremely difficult.
+SCI can lead to devastating consequences for both the physical and mental health of patients, particularly due to the uncertainty of neurological outcomes in the first two weeks post-injury.
+
+I endeavour to discover novel biomarkers of SCI outcomes, both to minimise this uncertainty and to expand our understanding of the underlying pathology of neurological recovery.
+I use a combination of modelling patient data and proteomic techniques to this end, and have identified a relationship between markers of liver health and SCI recovery.
+
+The lab rotations in the first year of my PhD also allowed me to greatly develop my skills at the bench.
+At Loughborough University, I investigated genetic expression in hydrogels, gaining experience in 3D tissue culture, hydrogels and PCR.
+At Nottingham University I studied the effects of alternating current on interfacing wires grown via wireless electrochemistry and gained experience in 3D printing, electrodeposition and microscopy.
+At Keele University I cultured multiple cell types in 3D and compared viability and growth kinetics via cell staining, fluorescent microscopy.
+These experiences have given me a highly cross-disciplinary skillset making me a flexible and versatile scientist.
+
+# Education
+
+```{r}
+orcid_education_data %>%
+  detailed_entries(
+    what = `education-summary.role-title`,
+    when = glue::glue("{`education-summary.start-date.year.value`} - {`education-summary.end-date.year.value`}"),
+    with = `education-summary.organization.name`,
+    where = `education-summary.organization.address.city`
+  )
+```
+
+# Awards
+
+```{r}
+#tribble(
+#  ~Year, ~Type, ~Desc,
+#  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
+#  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
+#) %>% 
+#  brief_entries(
+#    glue::glue("Nobel Prize in {Type}"),
+#    Year, 
+#    Desc
+#  )
+```
+
+```{r}
+orcid_distinctions_data %>%
+  detailed_entries(
+    what = glue::glue("{`distinction-summary.department-name`} - {`distinction-summary.role-title`}"),
+    when = `distinction-summary.start-date.year.value`,
+    with = `distinction-summary.organization.name`,
+    where = `distinction-summary.organization.address.city`
+  )
+```
+
+# Funding
+
+```{r}
+df %>% 
+  dplyr::filter(type == "funding") %>%
+  detailed_entries(
+    what = what,
+    when = glue::glue("{start_year} - {end_year}"),
+    with = with,
+    where = city,
+    why = glue::glue("£{amount} awarded")
+  )
+```
+
+# Skills
+
+```{r skills}
+df %>% 
+  dplyr::filter(type == "skill") %>%
+  detailed_entries(
+    what = what,
+    with = with
+  )
+```
+
+# Talks
+
+```{r}
+df %>%
+  dplyr::filter(type == "talk") %>%
+  detailed_entries(
+    what = what,
+    when = start_year,
+    with = with,
+    where = city
+  )
+```
+
+# Publications
+
+```{r}
+library(dplyr)
+#knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+
+bibliography_entries("publications.bib") %>%
+  arrange(desc(author$family), issued)
+```

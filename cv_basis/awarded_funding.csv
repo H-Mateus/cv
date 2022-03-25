@@ -1,0 +1,20 @@
+type,what,start,end,with,city,country,description,amount,currency,link
+funding,CDT Consumable grant,2021-03-01,2021-03-01,EPSRC Centre for Doctoral Training in Regenerative Medicine,Loughborough,United Kingdom,An award for additional consumables,5000,£,
+talk,Reproducible Research,2019-06-01,2019-06-01,"Centre for Doctoral Training Conference, 2019",Manchester,United Kingdom,,,,
+talk,Proteomic and bioinformatics analyses of plasma from SCI neurological improvers and non-improvers,2021-10-01,2021-10-01,ISCoS 2021,Oswestry,United Kingdom,,,,https://h-mateus.github.io/presentations/iscos_sci_proteomics_2021-08-31/index.html#1
+poster,Proteomic analysis of bloods from SCI patients,2020-06-24,2020-06-24,"Centre for Doctoral Training Conference, 2020",Virtual,United Kingdom,,,,https://gmbernardoharrington.netlify.app/post/joint-cdt-conference-2020/
+talk,Reproducible data analysis,2021-06-15,2021-06-15,"Centre for Doctoral Training Conference, 2021",Virtual,United Kingdom,,,,https://h-mateus.github.io/presentations/reproducible_research_2021-04-30/index.html#1
+skill,R,,,Code,,,,,,
+skill,Python,,,Code,,,,,,
+skill,SQL,,,Code,,,,,,
+skill,Unix/Linux,,,Code,,,,,,
+skill,Bash,,,Code,,,,,,
+skill,Proteomics,,,Bioinformatics,,,,,,
+skill,Genomics,,,Bioinformatics,,,,,,
+skill,High performance cluster computing,,,Bioinformatics,,,,,,
+skill,Electronic Health data,,,Wet lab work,,,,,,
+skill,3D Tissue Culture,,,Wet lab work,,,,,,
+skill,Microscopy,,,Wet lab work,,,,,,
+skill,Animal handling,,,Wet lab work,,,,,,
+skill,Histology,,,Wet lab work,,,,,,
+skill,Portuguese,,,Language,,,,,,

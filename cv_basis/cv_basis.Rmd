@@ -13,8 +13,8 @@ linkedin: gmb-harrington
 orcid: 0000-0001-6075-3619
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "Currently a Research Associate as a bioinformatician at the [Dementia Research Institute](https://ukdri.ac.uk/), [Cardiff University](https://www.cardiff.ac.uk/), working on Alzheimer's disease with a focus towards genomics."
-output: vitae::twentyseconds
-#output: vitae::moderncv
+#output: vitae::twentyseconds
+output: vitae::awesomecv
 ---
 
 ```{r setup, include=FALSE}
@@ -39,6 +39,19 @@ xfun::pkg_attach2(packages, message = FALSE)
 df <- read_csv(here("cv_basis/awarded_funding.csv")) %>%
   dplyr::mutate(start_year = lubridate::year(start), 
                 end_year = lubridate::year(end))
+```
+
+```{r}
+skills <- tribble(
+    ~area, ~skills,
+    "Programming Languages", "R, BASH, Python, SQL",
+    "Bioinformatics", "Proteomics, Genomics, High performance cluster computing, Electronic Health data",
+    "Wet Lab work", "3D Tissue Culture, Microscopy, Animal handling, Histology",
+    "Markup Languages", "Markdown, RMarkdown/Quarto, YAML, CSS, HTML, LaTeX",
+    "Version Control", "Git, GitHub, GitLab",
+    "Language", "Portuguese",
+    "Microsoft Office", "Excel, Outlook, OneNote, PowerBI, PowerPoint, Visio, Word"
+)
 ```
 
 ```{r load-orcid-data}
@@ -135,11 +148,10 @@ df %>%
 # Skills
 
 ```{r skills}
-df %>% 
-  dplyr::filter(type == "skill") %>%
-  brief_entries(
-    what = what,
-    with = with
+skills %>%
+  detailed_entries(
+    with = area,
+    what = skills
   )
 ```
 

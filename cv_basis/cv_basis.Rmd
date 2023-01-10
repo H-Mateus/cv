@@ -4,7 +4,7 @@ surname: Bernardo Harrington
 position: "Research Associate"
 address: "School of Medicine, Dementia Research Institue"
 #phone: +44 077 390 47519
-profilepic: avatar.png
+profilepic: avatar.jpeg
 www: gmbernardoharrington.netlify.app
 email: "Bernardo-HarringtonG@cardiff.ac.uk"
 #twitter: Hmateus4
@@ -12,8 +12,9 @@ github: H-Mateus
 linkedin: gmb-harrington
 orcid: 0000-0001-6075-3619
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "Currently a Research Associate as a bioinformatician at the Dementia Research Institute, Cardiff University, working on Alzheimer's disease with a focus towards genomics."
+aboutme: "Currently a Research Associate as a bioinformatician at the [Dementia Research Institute](https://ukdri.ac.uk/), [Cardiff University](https://www.cardiff.ac.uk/), working on Alzheimer's disease with a focus towards genomics."
 output: vitae::twentyseconds
+#output: vitae::moderncv
 ---
 
 ```{r setup, include=FALSE}
@@ -35,7 +36,7 @@ packages <- c("vitae",
 xfun::pkg_attach2(packages, message = FALSE)
 
 ## read in data
-df <- read_csv("awarded_funding.csv") %>%
+df <- read_csv(here("cv_basis/awarded_funding.csv")) %>%
   dplyr::mutate(start_year = lubridate::year(start), 
                 end_year = lubridate::year(end))
 ```
@@ -57,20 +58,14 @@ orcid_funding_data <- do.call("rbind",
 
 # Research profile
 
-Currently a Research Associate Alzheimer's Disease group within the [Dementia Research Institute](https://ukdri.ac.uk/) at [Cardiff University](https://www.cardiff.ac.uk/) as a bioinformatician.
+In my current role I proposed, built and maintain a PostgreSQL database of multiple large cohorts spanning over 20 years of data, which has enabled much more efficient and accurate access to this data, facilitating new and ongoing research projects.
+I have also built several extensible, well-documented pipelines for processing and analysis of data from multiple instruments and assays in a transparent, robust and reliable fashion.
+Most recently, I have proposed and lead on a push for more reproducible practises in research with colleagues, including the use of version control, project management strategies, containerisation and more. 
+As part of this push I have also been promoting the use of registered reports to counter [P-Hacking and HARKing](https://simplifaster.com/articles/p-hacking-harking-scientific-replication/).
 
-My PhD at Keele University based in the [OsKOR](https://oskor.netlify.app/) group at The [RJAH Orthopaedic Hospital](https://www.rjah.nhs.uk/) focused on spinal cord injury (SCI).
-SCI is damage to the spinal cord due to trauma, degeneration or disease that results in a temporary/permanent change to neurological function, recovery from which is highly variable, stymieing development of novel therapies as powering clinical trials is extremely difficult.
-SCI can lead to devastating consequences for both the physical and mental health of patients, particularly due to the uncertainty of neurological outcomes in the first two weeks post-injury.
-
-I endeavour to discover novel biomarkers of SCI outcomes, both to minimise this uncertainty and to expand our understanding of the underlying pathology of neurological recovery.
-I use a combination of modelling patient data and proteomic techniques to this end, and have identified a relationship between markers of liver health and SCI recovery.
-
-The lab rotations in the first year of my PhD also allowed me to greatly develop my skills at the bench.
-At Loughborough University, I investigated genetic expression in hydrogels, gaining experience in 3D tissue culture, hydrogels and PCR.
-At Nottingham University I studied the effects of alternating current on interfacing wires grown via wireless electrochemistry and gained experience in 3D printing, electrodeposition and microscopy.
-At Keele University I cultured multiple cell types in 3D and compared viability and growth kinetics via cell staining, fluorescent microscopy.
-These experiences have given me a highly cross-disciplinary skillset making me a flexible and versatile scientist.
+My PhD at Keele University was based in the [OsKOR](https://oskor.netlify.app/) group at The [RJAH Orthopaedic Hospital](https://www.rjah.nhs.uk/) and focused on spinal cord injury (SCI).
+I generated statistical models of SCI using [routine haematological data from electronic health records](https://doi.org/10.1089/neu.2020.7144) and examined the [plasma proteome of human SCI patients](https://doi.org/10.1101/2022.07.12.499696) to investigate biomarkers of neurological outcomes which is current unpredictable in all but the most severely injured patients.
+Lab rotations in my first year allowed me develop a range of bench skills, and exposed me to a diverse range of teams and working environments.
 
 # Education
 
@@ -116,7 +111,7 @@ df %>%
   dplyr::filter(type == "funding") %>%
   detailed_entries(
     what = what,
-    when = glue::glue("{start_year} - {end_year}"),
+    when = glue::glue("{start_year}"),
     with = with,
     where = city,
     why = glue::glue("£{amount} awarded")
@@ -133,7 +128,8 @@ df %>%
     when = start_year,
     with = with,
     where = city
-  )
+  ) %>%
+  dplyr::arrange(desc(when))
 ```
 
 # Skills
@@ -141,7 +137,7 @@ df %>%
 ```{r skills}
 df %>% 
   dplyr::filter(type == "skill") %>%
-  detailed_entries(
+  brief_entries(
     what = what,
     with = with
   )
@@ -153,6 +149,6 @@ df %>%
 library(dplyr)
 #knitr::write_bib(c("vitae", "tibble"), "packages.bib")
 
-bibliography_entries("publications.bib") %>%
-  arrange(desc(author$family), issued)
+bibliography_entries(here("cv_basis/publications.bib")) %>%
+  arrange(author$family, issued)
 ```

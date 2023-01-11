@@ -3,7 +3,7 @@ name: Gabriel-Mateus
 surname: Bernardo Harrington
 position: "Research Associate"
 address: "School of Medicine, Dementia Research Institue"
-#phone: +44 077 390 47519
+#phone: +44 077 777 77777
 profilepic: avatar.jpeg
 www: gmbernardoharrington.netlify.app
 email: "Bernardo-HarringtonG@cardiff.ac.uk"
@@ -14,6 +14,7 @@ orcid: 0000-0001-6075-3619
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "Currently a Research Associate as a bioinformatician at the [Dementia Research Institute](https://ukdri.ac.uk/), [Cardiff University](https://www.cardiff.ac.uk/), working on Alzheimer's disease with a focus towards genomics."
 #output: vitae::twentyseconds
+#headcolor: 009ACD
 output: vitae::awesomecv
 ---
 
@@ -44,8 +45,8 @@ df <- read_csv(here("cv_basis/awarded_funding.csv")) %>%
 ```{r}
 skills <- tribble(
     ~area, ~skills,
-    "Programming Languages", "R, BASH, Python, SQL",
-    "Bioinformatics", "Proteomics, Genomics, High performance cluster computing, Electronic Health data",
+    "Bioinformatics", "Proteomics, Genomics, High performance cluster computing, SLURM, Electronic Health data",
+    "Programming Languages", "R, BASH, Python, SQL, Nextflow",
     "Wet Lab work", "3D Tissue Culture, Microscopy, Animal handling, Histology",
     "Markup Languages", "Markdown, RMarkdown/Quarto, YAML, CSS, HTML, LaTeX",
     "Version Control", "Git, GitHub, GitLab",
@@ -69,7 +70,7 @@ orcid_funding_data <- do.call("rbind",
 )
 ```
 
-# Research profile
+# Professional Overview
 
 In my current role I proposed, built and maintain a PostgreSQL database of multiple large cohorts spanning over 20 years of data, which has enabled much more efficient and accurate access to this data, facilitating new and ongoing research projects.
 I have also built several extensible, well-documented pipelines for processing and analysis of data from multiple instruments and assays in a transparent, robust and reliable fashion.

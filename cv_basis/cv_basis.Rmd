@@ -12,7 +12,7 @@ github: H-Mateus
 linkedin: gmb-harrington
 orcid: 0000-0001-6075-3619
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "Currently a Research Associate as a bioinformatician at the [Dementia Research Institute](https://ukdri.ac.uk/), [Cardiff University](https://www.cardiff.ac.uk/), working on Alzheimer's disease with a focus towards genomics."
+aboutme: "Experienced and motivated scientist with a strong publication track record. My multidisciplinary skills in both informatics and bench work gives me a unique perspective and has made me highly adaptable."
 #output: vitae::twentyseconds
 #headcolor: 009ACD
 output: vitae::awesomecv
@@ -71,6 +71,8 @@ orcid_funding_data <- do.call("rbind",
 ```
 
 # Professional Overview
+
+Currently a Research Associate bioinformatician at the [Dementia Research Institute](https://ukdri.ac.uk/), [Cardiff University](https://www.cardiff.ac.uk/) centre, working on Alzheimer's disease with a focus towards genomics.
 
 In my current role I proposed, built and maintain a PostgreSQL database of multiple large cohorts spanning over 20 years of data, which has enabled much more efficient and accurate access to this data, facilitating new and ongoing research projects.
 I have also built several extensible, well-documented pipelines for processing and analysis of data from multiple instruments and assays in a transparent, robust and reliable fashion.

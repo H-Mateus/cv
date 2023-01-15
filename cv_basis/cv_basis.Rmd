@@ -6,7 +6,6 @@ address: "School of Medicine, Dementia Research Institue"
 #phone: +44 077 777 77777
 profilepic: avatar.jpeg
 www: gmbernardoharrington.netlify.app
-email: "Bernardo-HarringtonG@cardiff.ac.uk"
 #twitter: Hmateus4
 github: H-Mateus
 linkedin: gmb-harrington
@@ -51,7 +50,7 @@ skills <- tribble(
     "Markup Languages", "Markdown, RMarkdown/Quarto, YAML, CSS, HTML, LaTeX",
     "Version Control", "Git, GitHub, GitLab",
     "Language", "Portuguese",
-    "Microsoft Office", "Excel, Outlook, OneNote, PowerBI, PowerPoint, Visio, Word"
+    "Microsoft Office", "Excel, Outlook, OneNote, PowerPoint, Word"
 )
 ```
 
@@ -72,16 +71,11 @@ orcid_funding_data <- do.call("rbind",
 
 # Professional Overview
 
-Currently a Research Associate bioinformatician at the [Dementia Research Institute](https://ukdri.ac.uk/), [Cardiff University](https://www.cardiff.ac.uk/) centre, working on Alzheimer's disease with a focus towards genomics.
-
-In my current role I proposed, built and maintain a PostgreSQL database of multiple large cohorts spanning over 20 years of data, which has enabled much more efficient and accurate access to this data, facilitating new and ongoing research projects.
-I have also built several extensible, well-documented pipelines for processing and analysis of data from multiple instruments and assays in a transparent, robust and reliable fashion.
-Most recently, I have proposed and lead on a push for more reproducible practises in research with colleagues, including the use of version control, project management strategies, containerisation and more. 
-As part of this push I have also been promoting the use of registered reports to counter [P-Hacking and HARKing](https://simplifaster.com/articles/p-hacking-harking-scientific-replication/).
-
-My PhD at Keele University was based in the [OsKOR](https://oskor.netlify.app/) group at The [RJAH Orthopaedic Hospital](https://www.rjah.nhs.uk/) and focused on spinal cord injury (SCI).
-I generated statistical models of SCI using [routine haematological data from electronic health records](https://doi.org/10.1089/neu.2020.7144) and examined the [plasma proteome of human SCI patients](https://doi.org/10.1101/2022.07.12.499696) to investigate biomarkers of neurological outcomes which is current unpredictable in all but the most severely injured patients.
-Lab rotations in my first year allowed me develop a range of bench skills, and exposed me to a diverse range of teams and working environments.
+Experienced bioinformtician with a strong track record in the field of spinal cord injury and Alzheimer's disease.
+Extremely adaptable with a highly interdisciplinary background of bench work, proteomics, genomics and bioinformatics.
+Accomplished in working with diverse teams, including clinical and patient-facing settings.
+My leadership with informatic colleagues in working more cohesively and reproducibly by promoting the use of version control, containerisation and continuous integrations has streamlined our projects, reduced errors and improved quality.
+Related experience in training colleagues in the use of tools such as Git, GitHub/GitLab, R Markdown/Quarto and Docker.
 
 # Education
 

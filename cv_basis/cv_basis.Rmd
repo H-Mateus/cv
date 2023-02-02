@@ -6,6 +6,7 @@ address: "School of Medicine, Dementia Research Institue"
 #phone: +44 077 777 77777
 profilepic: avatar.jpeg
 www: gmbernardoharrington.netlify.app
+#email: "mateus.harrington@gmail.com"
 #twitter: Hmateus4
 github: H-Mateus
 linkedin: gmb-harrington
@@ -56,6 +57,10 @@ skills <- tribble(
 
 ```{r load-orcid-data}
 ## education data
+orcid_employment_data <- do.call("rbind",
+  rorcid::orcid_employments("0000-0001-6075-3619")$`0000-0001-6075-3619`$`affiliation-group`$summaries
+)
+## education data
 orcid_education_data <- do.call("rbind",
   rorcid::orcid_educations("0000-0001-6075-3619")$`0000-0001-6075-3619`$`affiliation-group`$summaries
 )
@@ -76,6 +81,18 @@ Extremely adaptable with a highly interdisciplinary background of bench work, pr
 Accomplished in working with diverse teams, including clinical and patient-facing settings.
 My leadership with informatic colleagues in working more cohesively and reproducibly by promoting the use of version control, containerisation and continuous integrations has streamlined our projects, reduced errors and improved quality.
 Related experience in training colleagues in the use of tools such as Git, GitHub/GitLab, R Markdown/Quarto and Docker.
+
+# Employment
+
+```{r}
+orcid_employment_data %>%
+  detailed_entries(
+    what = `employment-summary.role-title`,
+    when = glue::glue("{`employment-summary.start-date.year.value`} - {`employment-summary.end-date.year.value`}"),
+    with = `employment-summary.organization.name`,
+    where = `employment-summary.organization.address.city`
+  )
+```
 
 # Education
 
